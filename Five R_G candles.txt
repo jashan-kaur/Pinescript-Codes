@@ -1,0 +1,9 @@
+//@version=6
+indicator("5 Green / Red Candles", overlay=true)
+
+// Define conditions in ONE line (important)
+fiveGreen = (close > open and close[1] > open[1] and close[2] > open[2] and close[3] > open[3] and close[4] > open[4])
+fiveRed   = (close < open and close[1] < open[1] and close[2] < open[2] and close[3] < open[3] and close[4] < open[4])
+
+plotshape(fiveGreen, location=location.belowbar, color=color.green, style=shape.flag, text="5G")
+plotshape(fiveRed, location=location.abovebar, color=color.red, style=shape.circle, text="5R")
