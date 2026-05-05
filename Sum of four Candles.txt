@@ -1,0 +1,11 @@
+//@version=6
+indicator("Sum of 4 Closes", overlay=false)
+
+// Add last 4 closes
+sumClose = close + close[1] + close[2] + close[3]
+
+// Plot result
+plot(sumClose, color=color.blue)
+
+Div = sumClose/2
+plot(Div, "Div", color.yellow)
