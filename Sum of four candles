@@ -1,0 +1,105 @@
+# 📊 Sum of Four Candles Indicator
+
+A custom Pine Script indicator for TradingView that calculates the **sum of the last four candles** and helps visualize short-term price strength or momentum.
+
+---
+
+## 🚀 Overview
+
+This indicator computes the combined value of the **last 4 candles** (typically closing prices or candle ranges depending on implementation).
+
+It can be used to:
+
+* Identify short-term momentum
+* Smooth out noise from individual candles
+* Assist in trend confirmation
+
+---
+
+## ✨ Features
+
+* ➕ Calculates sum of last 4 candles
+* 📈 Helps identify momentum direction
+* ⚡ Lightweight and fast
+* 🎯 Works on all timeframes
+* 🔍 Easy to modify (change number of candles)
+
+---
+
+## 📜 Indicator Logic
+
+The indicator sums values from the last 4 candles:
+
+Example (using close prices):
+
+```id="a9k3f2"
+sumFour = close + close[1] + close[2] + close[3]
+```
+
+You can also adapt it for:
+
+* Candle body size → `(close - open)`
+* High/Low range → `(high - low)`
+
+---
+
+## 📍 Output
+
+Depending on implementation, the indicator can:
+
+* Plot the **sum line** on chart
+* Highlight bullish or bearish strength
+* Be used as a custom signal generator
+
+---
+
+## 🛠️ How to Use
+
+1. Open TradingView
+2. Go to **Pine Editor**
+3. Copy the script from this repository
+4. Paste it into the editor
+5. Click **Add to Chart**
+
+---
+
+## 📂 File Structure
+
+```id="xq92mn"
+indicators/
+   └── sum-of-four-candles.pine
+```
+
+---
+
+## ⚙️ Example Code
+
+```pinescript id="8mz2qp"
+//@version=5
+indicator("Sum of Four Candles", overlay=false)
+
+sumFour = close + close[1] + close[2] + close[3]
+
+plot(sumFour, title="Sum of 4 Candles")
+```
+
+---
+
+## 📌 Notes
+
+* Works best when combined with other indicators
+* Helps reduce noise from single candle movement
+* Can be customized to any number of candles
+
+---
+
+## ⚠️ Disclaimer
+
+This indicator is for educational purposes only.
+Not financial advice. Always test before live trading.
+
+---
+
+## 📜 License
+
+MIT License
