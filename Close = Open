@@ -1,0 +1,93 @@
+# 📊 Close = Open Indicator (Pine Script)
+
+This repository contains a simple **Pine Script v6 indicator** that identifies candles where the **closing price is exactly equal to the opening price**.
+
+---
+
+## 🚀 Overview
+
+The **Close = Open Indicator** highlights candles that show **no price movement between open and close**, which often represents:
+
+* Market indecision 🤔
+* Low volatility periods 📉
+* Possible consolidation zones
+
+---
+
+## 🧠 How It Works
+
+The script checks a simple condition:
+
+* If `close == open` → mark the candle
+
+When this condition is true, a **blue diamond shape** is plotted above the candle.
+
+---
+
+## 💻 Code
+
+```pinescript
+//@version=6
+indicator("Close = Open", overlay=true)
+
+// Condition: Close equals Open
+equalCandle = close == open
+
+// Plot a shape when condition is true
+plotshape(equalCandle, title="Close = Open", location=location.abovebar, color=color.blue, style=shape.diamond, size=size.small)
+```
+
+---
+
+## 🛠️ How to Use
+
+1. Open **TradingView**
+2. Go to **Pine Editor**
+3. Paste the script
+4. Click **Add to Chart**
+
+---
+
+## 📌 Key Features
+
+* ✅ Simple and lightweight
+* ✅ Easy to understand logic
+* ✅ Visual marking using shapes
+* ✅ Works on all timeframes
+
+---
+
+## 📈 Use Cases
+
+* Identify **Doji-like candles**
+* Spot **market indecision zones**
+* Combine with other indicators for better signals
+
+---
+
+## ⚠️ Note
+
+* Exact equality (`close == open`) may be **rare** due to price precision.
+* You can modify the logic to allow a small difference, for example:
+
+  ```pinescript
+  equalCandle = math.abs(close - open) < 0.01
+  ```
+
+---
+
+## 📄 License
+
+This project is licensed under the **Mozilla Public License 2.0**
+
+---
+
+## 👩‍💻 Author
+
+**Jashandeep Kaur**
+
+---
+
+## ⭐ Support
+
+If you found this helpful, consider giving it a ⭐ on GitHub!
